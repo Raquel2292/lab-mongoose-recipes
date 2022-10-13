@@ -43,8 +43,13 @@ return Recipe.create({
 })
 .then ((response) => {
   console.log("Toma que toma!")
+  return Recipe.deleteOne({title: "Carrot Cake"})
+ 
 })
 
+.then ((response) => {
+  console.log("Oh..qué pena!")
+})
 
 .catch(error => {
   console.error('Error connecting to the database', error);
