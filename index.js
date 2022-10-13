@@ -32,8 +32,15 @@ return Recipe.create({
 
 .then((response) => {
   console.log("se han añadido las", response.title)
+  return Recipe.insertMany(data)
+})
+.then ((response) => {
+  /*console.log("los titulos son: ", response)*/
+  response.forEach((recipe) => {
+    console.log("los titulos son: ", recipe.title)
+  })
 })
 
-  .catch(error => {
-    console.error('Error connecting to the database', error);
-  })
+.catch(error => {
+  console.error('Error connecting to the database', error);
+ })
