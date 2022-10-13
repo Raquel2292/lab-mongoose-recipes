@@ -39,7 +39,12 @@ return Recipe.create({
   response.forEach((recipe) => {
     console.log("los titulos son: ", recipe.title)
   })
+  return Recipe.findOneAndUpdate({title: "Rigatoni alla Genovese"}, {duration: 100})
 })
+.then ((response) => {
+  console.log("Toma que toma!")
+})
+
 
 .catch(error => {
   console.error('Error connecting to the database', error);
