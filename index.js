@@ -49,6 +49,8 @@ return Recipe.create({
 
 .then ((response) => {
   console.log("Oh..qué pena!")
+  mongoose.disconnect()
+  console.log("Me he apagado!")
 })
 
 .catch(error => {
