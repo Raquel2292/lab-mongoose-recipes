@@ -17,7 +17,23 @@ mongoose
   })
   .then(() => {
     // Run your code here, after you have insured that the connection was made
-  })
+
+return Recipe.create({
+  title: "Albondigas",
+  level: "Easy Peasy",
+  ingredients: ["Pan", "Carne Picada", "Cebolla", "Ajo"],
+  cuisine: "Española",
+  dishType: ["main_course"],
+  image: "https://www.google.com/search?q=albondigas&rlz=1C1CHZN_esES933ES933&sxsrf=ALiCzsZ1ICXZ08tYBPDXPDpz2TmTDVah-g:1665676751259&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjo18a4yd36AhV0S_EDHWq_DnQQ_AUoAXoECAIQAw&biw=1536&bih=714&dpr=1.25#imgrc=uLKRTSNo2h7RiM",
+  duration: 40,
+  creator: "Mi Abuela",
+})
+})
+
+.then((response) => {
+  console.log("se han añadido las", response.title)
+})
+
   .catch(error => {
     console.error('Error connecting to the database', error);
-  });
+  })
